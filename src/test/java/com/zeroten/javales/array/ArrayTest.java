@@ -137,4 +137,32 @@ public class ArrayTest {
         Arrays.sort(arr);
         System.out.println("排序后："+Arrays.toString(arr));
     }
+
+    @Test
+    public void testDuoWeiShuZu(){
+//        示例：定义⼀个⼆维数组，第⼀维表示⽤户，
+//        第⼆维表示⽤户的具体信息（1. 编码, 2. 姓名, 3.性别, 4.年 龄）。定义赋值并打印。
+        String[][] users=new String[2][];
+        users[0]=new String[4];
+        users[0][0]="0001";
+        users[0][1]="张三";
+        users[0][2]="男";
+        users[0][3]="25";
+
+        users[1]=new String[4];
+        users[1][0]="0002";
+        users[1][1]="莉莉";
+        users[1][2]="女";
+        users[1][3]="22";
+        System.out.println("for循环");
+        for (int index = 0; index <users.length ; index++) {
+            System.out.println(Arrays.toString(users[index]));
+        }
+        System.out.println("foreach循环");
+        for (String[] val:users
+             ) {
+            System.out.println(Arrays.toString(val));
+        }
+//        System.out.println(users.toString());
+    }
 }
