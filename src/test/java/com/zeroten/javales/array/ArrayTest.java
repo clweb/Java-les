@@ -49,4 +49,31 @@ public class ArrayTest {
         System.out.println(Arrays.toString(arr7));
 
     }
+
+    @Test
+    public void testBianLi(){
+//        示例：分别使⽤上述三种⽅式遍历数组 Integer[] arr = {1, 2, 3, 4, 5};
+        Integer[] arr={1,2,3,4,5};
+        System.out.println("1.for循环适应数组下标");
+        for (int index = 0; index < arr.length; index++) {
+//            System.out.println("下标"+index+",存放的值是"+arr[index]);
+            System.out.println(String.format("下标：%d,存放的值是：%d",index,arr[index]));
+        }
+        System.out.println("2.for each循环");
+        int index=1;
+        for (int numb:arr) {
+            System.out.println(String.format("第%d次取到的值:%d",index,numb));
+            index++;
+//            System.out.println("值："+numb);
+        }
+        System.out.println("java8新增的Lambda表达式");
+        Arrays.asList(arr).forEach(val->{
+            System.out.println("值是"+val);
+            if(val % 2 == 0){
+                System.out.println("  它是一个偶数");
+            }else{
+                System.out.println("  它是一个奇数");
+            }
+        });
+    }
 }
