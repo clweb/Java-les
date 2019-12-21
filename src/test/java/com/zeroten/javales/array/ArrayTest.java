@@ -165,4 +165,50 @@ public class ArrayTest {
         }
 //        System.out.println(users.toString());
     }
+
+    public int[] twoSum(int[] nums,int target){
+        int times=0;
+        for (int index = 0; index < nums.length; index++) {
+            for (int twoindex = index+1; twoindex <nums.length ; twoindex++) {
+                times++;
+                if (nums[index] + nums[twoindex] == target) {
+                    System.out.println("循环"+times+"次");
+                    return new int[]{index,twoindex};
+                }
+            }
+        }
+        return null;
+    }
+    public int[] twoSum2(int[] nums,int target){
+        System.out.println("传入数组："+Arrays.toString(nums));
+        Arrays.sort(nums);
+        System.out.println("排序数组："+Arrays.toString(nums));
+        int times=0;
+        for (int index = 0; index < nums.length ; index++) {
+            if(nums[index] >= target){
+                return null;
+            }
+            for (int twoindex = index+1; twoindex < nums.length ; twoindex++) {
+                times++;
+                if(nums[twoindex] > target){
+                    System.out.println("第一个数("+index+")"+nums[index]+"已经大于"+target+",退出循环");
+                    break;
+                }
+                if (nums[index] + nums[twoindex] == target) {
+                    System.out.println("循环"+times+"次");
+                    return new int[]{index,twoindex};
+                }
+            }
+        }
+        return null;
+    }
+
+    @Test
+    public void testTwoSum(){
+        int[] intArr={22,7,11,15,8,9,6,4};
+        int target=12;
+        System.out.println(Arrays.toString(twoSum(intArr,target)));
+        System.out.println("-------------------------");
+        System.out.println(Arrays.toString(twoSum2(intArr,target)));
+    }
 }
