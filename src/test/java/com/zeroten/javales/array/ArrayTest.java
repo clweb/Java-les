@@ -76,4 +76,31 @@ public class ArrayTest {
             }
         });
     }
+
+    @Test
+    public void testCopy(){
+        Integer[] arr1={1,2,3,4,5,6};
+        Integer[] arr2={5,6,7,8,9,10};
+//      拷⻉数组 arr1 的前 3 个元素
+        Integer[] arr11=new Integer[3];
+        arr11[0]=arr1[0];
+        arr11[1]=arr1[1];
+        arr11[2]=arr1[2];
+        System.out.println("arr11="+Arrays.toString(arr11));
+
+        Integer[] arr12=Arrays.copyOf(arr1,3);
+        System.out.println("arr12="+Arrays.toString(arr12));
+
+        //拷贝arr1后三位到新的数组
+        Integer[] arr13=Arrays.copyOfRange(arr1,arr1.length-3,arr1.length);
+        System.out.println("arr13="+Arrays.toString(arr13));
+//      拷⻉数组 arr1 的第 1 位到第 3 位的元素（不包括第 3 位）
+        Integer[] arr14=Arrays.copyOfRange(arr1,0,2);
+        System.out.println("arr14="+Arrays.toString(arr14));
+
+//      拷⻉数组 arr2 的后 3 位到 arr1 到后 3 位
+        System.arraycopy(arr2,arr2.length-3,arr1,arr1.length-3,3);
+        System.out.println("arr1="+Arrays.toString(arr1));
+
+    }
 }
