@@ -7,7 +7,7 @@
  * 2019-12-18 - cl- 创建。
  */
 
-package com.zeroten.javales.operator;
+package com.zeroten.javales.typeandoperator.operator;
 
 import org.testng.annotations.Test;
 

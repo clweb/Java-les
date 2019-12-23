@@ -7,7 +7,7 @@
  * 2019-12-18 - cl- 创建。
  */
 
-package com.zeroten.javales.packagingclass;
+package com.zeroten.javales.classobject.packagingclass;
 
 import org.testng.annotations.Test;
 
