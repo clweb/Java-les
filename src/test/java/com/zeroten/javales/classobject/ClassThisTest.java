@@ -42,6 +42,7 @@ public class ClassThisTest {
     @Test
     public void testPrintParams(){
         print();
+        print(null);
         print(1);
         print(1,25,64,3);
     }
