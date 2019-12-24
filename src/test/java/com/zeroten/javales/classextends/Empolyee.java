@@ -11,7 +11,7 @@ package com.zeroten.javales.classextends;
 
 import java.util.Date;
 
-public class Empolyee {
+public class Empolyee implements Cloneable{
     private String name;
     private Date HireDate;
     private Integer salary;
@@ -60,5 +60,8 @@ public class Empolyee {
         str.append(",薪水标准：");
         str.append(getSalary());
         return str.toString();
+    }
+    public Empolyee clone() throws CloneNotSupportedException{
+        return (Empolyee) super.clone();
     }
 }
