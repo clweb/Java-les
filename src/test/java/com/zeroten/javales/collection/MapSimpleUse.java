@@ -26,11 +26,25 @@ public class MapSimpleUse {
         //  3.键值key可以是 null吗？ --可以
         //  4.值value可以是 null 吗？ --可以
         Map<Integer, String> map = new HashMap<>();
-        map.put(1, "张三,20");
-        map.put(1, "王五,23");
+        String putRet1 = map.put(1, "张三,23");
+        System.out.println(putRet1);
+        String putRet2 = map.put(1, "王五,23");
+        System.out.println("返回旧值:" + putRet2);
         map.put(2, "李四,21");
+
 
         String val1 = map.get(1);
         System.out.println(val1);
+
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + "=" + entry.getValue());
+        }
+
+        map.put(null, "没有人");
+//        map.put(null, "没有人2");
+        map.put(3, null);
+        map.put(null, null);
+        map.remove(2);
+        System.out.println(map);
     }
 }

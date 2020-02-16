@@ -24,7 +24,8 @@ public class ListSimpleUse {
             }
             System.out.print(str);
         }
-        System.out.println();
+
+        System.out.print("\n" + "使用迭代器循环：");
         //遍历 - 使用迭代器方式
         Iterator<String> iterator = list.iterator();
         //迭代器的位置是在元素之间
@@ -38,10 +39,12 @@ public class ListSimpleUse {
             //1.将迭代器的位置移动到下一个位置
             //2.同时返回越过的元素
             String str = iterator.next();
-            System.out.println(str);
+            System.out.print(str + ',');
         }
-
-
+        //当迭代器达到最后一个元素之后时,
+        // 再调用next()方法,抛NoSuchElementException异常
+        //System.out.println(iterator.next());
+        System.out.print("\n" + "元素删除后：");
         list.remove(2);
         list.remove("E");
         System.out.println(list);
@@ -51,13 +54,12 @@ public class ListSimpleUse {
         //集合分为两大类
         //1.单个元素的序列,全部都实现了 Collection 接口
         //1.1 List,有序的,按照插入顺序排序,可以有重复的元素
-        //1.2 Set,集,不可以有重复元素,可以包含 null
+        //1.2 Set,集,不可以有重复元素,可以包含 null值
         //1.3 Queue,队列,按一定规则进行添加/删除
         //2.键值对,全部都实现了 Map 接口
 
-        //可以通过<>括号来指导列表里药房的元素类型
+        //可以通过<>括号来指导列表里要放的元素类型
         //如果 add 添加了不同的类型
-//        List<String> list = new ArrayList<>();
         List<String> list = new ArrayList<>();
         list.add("H");
         list.add("O");
@@ -80,7 +82,7 @@ public class ListSimpleUse {
         list3.add("str");
         list3.add(new ListSimpleUse().new CustomClass());
         list3.add(new Date());
-//        printAllElement(list3);
+        System.out.println(list3);
 
         // 如果需要进行强制类型转换时,需要使用 instanceof 来判断该变量的实际类型
         for (int i = 0; i < list3.size(); i++) {
@@ -95,7 +97,7 @@ public class ListSimpleUse {
                 Date date = (Date) obj;
                 System.out.println("日期：" + date);
             } else {
-                System.out.println("不支持类型" + obj.getClass().getName());
+                System.out.println("不支持的类型：" + obj.getClass().getName());
             }
         }
 

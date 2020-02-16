@@ -33,13 +33,14 @@ public class SetSimpleUse {
         set.add("E");
         // 遍历 - for循环
         // 因为是无序的,同样的索引值取出来的值可能是不也一样的
-//        for (int i = 0; i < set.size(); i++) {
-//            String str = set.get(下标);
-//        }
-        //遍历 - 迭代器
+        //        for (int i = 0; i < set.size(); i++) {
+        //            String str = set.get(下标);
+        //        }
+        // 遍历 - 迭代器
+        System.out.println("HashSet迭代遍历：");
         Iterator<String> iterator = set.iterator();
         while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+            System.out.print(iterator.next() + ",");
         }
 
         //list 有序,指的是按插入顺序来保存元素
@@ -55,10 +56,11 @@ public class SetSimpleUse {
         for (int i = 0; i < set1.size(); i++) {
         }
 
-        //遍历 - 迭代器
+        // 遍历 - 迭代器
+        System.out.println("\nTreeSet迭代遍历：");
         Iterator<String> iterator1 = set1.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        while (iterator1.hasNext()) {
+            System.out.print(iterator1.next() + ",");
         }
 
         //如果需要使用 HashSet 的
@@ -72,11 +74,12 @@ public class SetSimpleUse {
         set2.add("6");
         set2.add(null);
         set2.add("5");
+        System.out.println("\nLinkedHashSet迭代遍历：");
         Iterator<String> iterator2 = set2.iterator();
         while (iterator2.hasNext()) {
-            System.out.println(iterator2.next());
+            System.out.print(iterator2.next() + ",");
         }
-
+        System.out.println();
         //remove(元素索引);
         //remove(对象);
         //remove 方法如果成功删除,返回true 否者返回false
@@ -98,12 +101,13 @@ public class SetSimpleUse {
         list.remove("3");
         //list.remove(10); //索引值不在[0 ~ size()) 区间,抛 IndexOutOfBoundsException 异常
         list.remove(null);
-
+        System.out.println("list1=" + list);
         List<String> removeList = new ArrayList<>();
         removeList.add("1");
         removeList.add(null);
+        removeList.add("5");
         list.removeAll(removeList);
         System.out.println("removeList=" + removeList);
-
+        System.out.println("list2=" + list);
     }
 }
