@@ -11,7 +11,7 @@ package com.zeroten.javales.map;
 
 import java.util.*;
 
-public class MapTest {
+public class HashMapTest {
 
     /**
      * 内容 -Map
